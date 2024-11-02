@@ -1,0 +1,5 @@
+CREATE TABLE task (
+    id UUID DEFAULT RANDOM_UUID() PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    minutes INT NOT NULL
+);
