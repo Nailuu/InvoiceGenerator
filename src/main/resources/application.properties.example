@@ -1,0 +1,28 @@
+spring.application.name=InvoiceGenerator
+
+# App properties
+app.csv-path=example.csv
+app.jasper-template-path=templates/example.jrxml
+
+# Jasper Template properties
+template.number=001
+template.created-at-date=5 November 2024
+template.due-date=5 December 2024
+template.hourly-rate=15
+template.recipient-name=Amazon EU
+template.recipient-address-street=38 Av. John F. Kennedy,
+template.recipient-address-postal-city=L-1855 Neudorf-Weimershof
+
+template.title=BOB THEO
+template.sub-title=INDEPENDENT - DEVELOPER
+template.address-street=3 RUE DES POTIERS
+template.address-postal-city=L-0000 LUXEMBOURG-VILLE
+template.phone=+352 111 222 333
+template.email=contact@example.fr
+
+template.vat=LU11223344
+template.rcs=A1122
+template.business-licence=11223344/0
+template.bank-name=Spuerkess
+template.iban=LU11 2222 3333 4444 0000
+template.bic=SPLLLULL

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="poppins">
+        <normal>fonts/Poppins/Poppins-Regular.ttf</normal>
+        <bold>fonts/Poppins/Poppins-ExtraBold.ttf</bold>
+        <pdfEmbedded>true</pdfEmbedded>
+    </fontFamily>
+</fontFamilies>

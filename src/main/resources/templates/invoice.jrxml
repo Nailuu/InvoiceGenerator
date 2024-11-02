@@ -1,0 +1,168 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.0  -->
+<jasperReport name="Invoice" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45cb7f4d-3fa1-40d7-99ed-782e5497547b">
+    <parameter name="TITLE" class="java.lang.String"/>
+    <parameter name="SUBTITLE" class="java.lang.String"/>
+    <parameter name="ADDRESSPOSTALCITY" class="java.lang.String"/>
+    <parameter name="ADDRESSSTREET" class="java.lang.String"/>
+    <parameter name="EMAIL" class="java.lang.String"/>
+    <parameter name="PHONE" class="java.lang.String"/>
+    <parameter name="BIC" class="java.lang.String"/>
+    <parameter name="IBAN" class="java.lang.String"/>
+    <parameter name="BANKNAME" class="java.lang.String"/>
+    <parameter name="BUSINESSLICENCE" class="java.lang.String"/>
+    <parameter name="RCS" class="java.lang.String"/>
+    <parameter name="VAT" class="java.lang.String"/>
+    <parameter name="RECIPIENTADDRESSPOSTALCITY" class="java.lang.String"/>
+    <parameter name="RECIPIENTADDRESSSTREET" class="java.lang.String"/>
+    <parameter name="RECIPIENTNAME" class="java.lang.String"/>
+    <parameter name="DUEDATE" class="java.lang.String"/>
+    <parameter name="CREATEDATDATE" class="java.lang.String"/>
+    <parameter name="NUMBER" class="java.lang.String"/>
+    <parameter name="HOURLYRATE" class="java.lang.Double"/>
+    <query language="sql"><![CDATA[]]></query>
+    <field name="name" class="java.lang.String"/>
+    <field name="time" class="java.lang.String"/>
+    <field name="minutes" class="java.lang.Integer"/>
+    <background splitType="Stretch"/>
+    <pageHeader height="255" splitType="Stretch">
+        <element kind="textField" uuid="20168b2f-f017-4c94-b0d4-9857a0a3e931" mode="Transparent" x="5" y="-2" width="370" height="45" forecolor="#5271FF" fontName="Poppins" fontSize="26.0" bold="true">
+            <expression><![CDATA[$P{TITLE}.toUpperCase()]]></expression>
+        </element>
+        <element kind="textField" uuid="08839edb-d29a-43b3-92de-e22ad105bd65" mode="Transparent" x="5" y="32" width="160" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA[$P{SUBTITLE}.toUpperCase()]]></expression>
+        </element>
+        <element kind="textField" uuid="5db940dc-13fd-44af-a7ad-f8453384c0e2" mode="Transparent" x="412" y="2" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA[$P{ADDRESSSTREET}]]></expression>
+        </element>
+        <element kind="textField" uuid="964ffe99-20fa-46d2-8a79-7cc0fe682003" mode="Transparent" x="412" y="17" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA[$P{ADDRESSPOSTALCITY}]]></expression>
+        </element>
+        <element kind="textField" uuid="5f94ef0f-312e-4358-860d-8fc27eca1cd9" mode="Transparent" x="412" y="44" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA["TEL: " + $P{PHONE}]]></expression>
+        </element>
+        <element kind="textField" uuid="2398e63c-120e-4329-bb7a-18538f57a540" mode="Transparent" x="412" y="59" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA["EMAIL: " + $P{EMAIL}]]></expression>
+        </element>
+        <element kind="rectangle" uuid="c012bf12-b3c2-45ce-86dc-4673b2fe08d4" x="-20" y="120" width="70" height="25" forecolor="#5271FF" backcolor="#5271FF">
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+            <property name="com.jaspersoft.studio.unit.width" value="px"/>
+        </element>
+        <element kind="staticText" uuid="08fc796a-0c24-4f77-a45b-c25ac99b801a" x="60" y="110" width="131" height="44" fontName="Poppins" fontSize="25.0" bold="true" vTextAlign="Middle">
+            <text><![CDATA[INVOICE]]></text>
+        </element>
+        <element kind="staticText" uuid="7e449645-e71c-4210-bea0-5023b16a3d5b" x="60" y="165" width="20" height="20" fontName="Poppins" fontSize="12.0" bold="true">
+            <text><![CDATA[To]]></text>
+        </element>
+        <element kind="textField" uuid="e295a643-9ace-4be0-acb2-0e87abba74a9" mode="Transparent" x="60" y="181" width="194" height="30" fontName="Poppins" fontSize="15.0" bold="true">
+            <expression><![CDATA[$P{RECIPIENTNAME}]]></expression>
+        </element>
+        <element kind="textField" uuid="e70506dc-e457-400e-9b07-d64271982274" mode="Transparent" x="60" y="206" width="195" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA[$P{RECIPIENTADDRESSSTREET}]]></expression>
+        </element>
+        <element kind="textField" uuid="ce1187ef-09db-46d4-8d81-421904b60889" mode="Transparent" x="60" y="221" width="195" height="20" fontName="Poppins" fontSize="10.0" bold="false">
+            <expression><![CDATA[$P{RECIPIENTADDRESSPOSTALCITY}]]></expression>
+        </element>
+        <element kind="staticText" uuid="704d6a54-43e3-4293-9b4e-0ad561463e10" x="338" y="179" width="70" height="20" fontName="Poppins" fontSize="12.0" bold="true" vTextAlign="Middle">
+            <text><![CDATA[Invoice no:]]></text>
+        </element>
+        <element kind="staticText" uuid="bcb39acb-e1f9-4b0e-be28-57ded9acee0c" x="338" y="199" width="70" height="20" fontName="Poppins" fontSize="12.0" bold="false" vTextAlign="Middle">
+            <text><![CDATA[Date:]]></text>
+        </element>
+        <element kind="staticText" uuid="86ebf293-b283-46ff-ab6b-47e8fb5ba07f" x="338" y="219" width="70" height="20" fontName="Poppins" fontSize="12.0" bold="false" vTextAlign="Middle">
+            <text><![CDATA[Due date:]]></text>
+        </element>
+        <element kind="textField" uuid="74ee2b81-1e5f-4d66-858d-b3dfc9e69d31" mode="Transparent" x="425" y="179" width="115" height="20" fontName="Poppins" fontSize="12.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{NUMBER}]]></expression>
+        </element>
+        <element kind="textField" uuid="b925ade3-804f-4af6-8791-70c351341735" mode="Transparent" x="425" y="199" width="115" height="20" fontName="Poppins" fontSize="12.0" bold="false" vTextAlign="Middle">
+            <expression><![CDATA[$P{CREATEDATDATE}]]></expression>
+        </element>
+        <element kind="textField" uuid="4e347ed9-be53-4d14-a3a4-68737f8bccb2" mode="Transparent" x="425" y="219" width="115" height="20" fontName="Poppins" fontSize="12.0" bold="false" vTextAlign="Middle">
+            <expression><![CDATA[$P{DUEDATE}]]></expression>
+        </element>
+        <property name="com.jaspersoft.studio.unit.height" value="px"/>
+    </pageHeader>
+    <columnHeader height="43">
+        <element kind="line" uuid="d6d8a152-aa44-4af1-be5c-820e4fe07e65" x="22" y="7" width="509" height="1" forecolor="#5271FF"/>
+        <element kind="line" uuid="6442e16f-9a91-47d6-be3c-8b0860fb3623" x="22" y="40" width="509" height="1" forecolor="#5271FF"/>
+        <element kind="staticText" uuid="5ebfc073-e848-4574-b460-2f1045fb9d25" x="30" y="14" width="24" height="20" fontName="Poppins" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[NO]]></text>
+        </element>
+        <element kind="staticText" uuid="71891149-0645-44c0-91c8-c57018cb152c" x="72" y="14" width="106" height="20" fontName="Poppins" fontSize="13.0" bold="true" hTextAlign="Left" vTextAlign="Middle">
+            <text><![CDATA[DESCRIPTION]]></text>
+        </element>
+        <element kind="staticText" uuid="791cc28c-0998-4bc9-9f02-9bb05dcb1945" x="317" y="14" width="50" height="20" fontName="Poppins" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[HOURS]]></text>
+        </element>
+        <element kind="staticText" uuid="d42dcce1-872a-4034-87ae-4d1e9f1da77b" x="381" y="14" width="42" height="20" fontName="Poppins" fontSize="13.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+            <text><![CDATA[RATE]]></text>
+        </element>
+        <element kind="staticText" uuid="af257427-2d92-4354-87b8-6d6e25a09048" x="436" y="14" width="78" height="20" fontName="Poppins" fontSize="13.0" bold="true" hTextAlign="Right" vTextAlign="Middle">
+            <text><![CDATA[SUB TOTAL]]></text>
+        </element>
+        <property name="com.jaspersoft.studio.unit.height" value="px"/>
+    </columnHeader>
+    <detail>
+        <band height="31" splitType="Stretch">
+            <element kind="textField" uuid="cc1ce884-c6ae-4cea-b94c-89684d196e0c" x="72" y="5" width="238" height="20" fontName="Poppins" vTextAlign="Middle">
+                <expression><![CDATA[$F{name}]]></expression>
+            </element>
+            <element kind="textField" uuid="b55b2c4f-7ee9-49e2-9b5b-104c4a4b47aa" x="317" y="5" width="50" height="20" fontName="Poppins" hTextAlign="Center" vTextAlign="Middle">
+                <expression><![CDATA[$F{time}]]></expression>
+            </element>
+            <element kind="textField" uuid="c09de3f1-8f35-429c-bc6d-4523ae2b2ca5" x="381" y="5" width="42" height="20" fontName="Poppins" hTextAlign="Center" vTextAlign="Middle">
+                <expression><![CDATA[$P{HOURLYRATE}]]></expression>
+                <property name="net.sf.jasperreports.style.pattern" value="#,##0.00"/>
+            </element>
+            <element kind="line" uuid="71e6d853-5088-4125-833a-af0af94b0eb7" x="20" y="30" width="509" height="1" forecolor="#DEDEDE"/>
+            <element kind="textField" uuid="c3f3186d-dfa7-4cc2-910f-eddf0eb81866" x="436" y="5" width="78" height="20" fontName="Poppins" hTextAlign="Right" vTextAlign="Middle">
+                <expression><![CDATA[($F{minutes}.doubleValue() / 60) * $P{HOURLYRATE}]]></expression>
+                <property name="net.sf.jasperreports.style.pattern" value="#,##0.00"/>
+            </element>
+            <element kind="textField" uuid="e29be107-802e-414d-b851-b39af0f83388" x="30" y="5" width="24" height="20" fontName="Poppins" hTextAlign="Center" vTextAlign="Middle">
+                <expression><![CDATA[$V{REPORT_COUNT}]]></expression>
+            </element>
+            <property name="com.jaspersoft.studio.unit.height" value="px"/>
+        </band>
+    </detail>
+    <pageFooter height="100" splitType="Stretch">
+        <element kind="line" uuid="3e2c03ac-3dc4-4d8b-8d60-2cfbdbabaef7" x="23" y="15" width="509" height="1" forecolor="#5271FF"/>
+        <element kind="staticText" uuid="9acb817a-5154-4e48-b222-1c0e9cb8773f" x="23" y="35" width="108" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[VAT Number:]]></text>
+        </element>
+        <element kind="staticText" uuid="827c974f-eb6d-4a5f-8af6-bbcc899939fc" x="23" y="53" width="108" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[R.C.S. Luxembourg:]]></text>
+        </element>
+        <element kind="staticText" uuid="47e41dd1-cca2-4d09-aa6b-73ea22e27b50" x="23" y="71" width="108" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[Business Licence:]]></text>
+        </element>
+        <element kind="textField" uuid="0eec8ada-0950-487d-b05f-d63264c2c0e8" mode="Transparent" x="131" y="35" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{VAT}]]></expression>
+        </element>
+        <element kind="textField" uuid="3c67fa3a-4490-44e1-8f44-30ec0f7cf6bc" mode="Transparent" x="131" y="53" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{RCS}]]></expression>
+        </element>
+        <element kind="textField" uuid="58b051db-202c-46d8-9a48-7e78e88acc62" mode="Transparent" x="131" y="71" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{BUSINESSLICENCE}]]></expression>
+        </element>
+        <element kind="staticText" uuid="81be1792-1e8e-42d6-a0d0-1ccace5b0cf2" x="353" y="35" width="40" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[Bank:]]></text>
+        </element>
+        <element kind="staticText" uuid="14f3ebaa-2785-4305-be93-dda5c0cc95f8" x="353" y="53" width="40" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[IBAN:]]></text>
+        </element>
+        <element kind="staticText" uuid="af09c108-e72a-487b-b31b-009ec395782a" x="353" y="71" width="40" height="20" fontName="Poppins" vTextAlign="Middle">
+            <text><![CDATA[BIC:]]></text>
+        </element>
+        <element kind="textField" uuid="58f14d87-62bc-4e7a-9476-11d150900135" mode="Transparent" x="393" y="35" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{BANKNAME}]]></expression>
+        </element>
+        <element kind="textField" uuid="406621ac-5a82-49da-b0a8-601874148f1e" mode="Transparent" x="393" y="53" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{IBAN}]]></expression>
+        </element>
+        <element kind="textField" uuid="a02d6b94-901a-42d2-a5f7-8eb2040e860a" mode="Transparent" x="393" y="71" width="143" height="20" fontName="Poppins" fontSize="10.0" bold="true" vTextAlign="Middle">
+            <expression><![CDATA[$P{BIC}]]></expression>
+        </element>
+        <property name="com.jaspersoft.studio.unit.height" value="px"/>
+    </pageFooter>
+</jasperReport>
