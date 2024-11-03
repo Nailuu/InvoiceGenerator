@@ -6,9 +6,10 @@ app.jasper-template-path=templates/example.jrxml
 
 # Jasper Template properties
 template.number=001
-template.created-at-date=5 November 2024
-template.due-date=5 December 2024
+template.created-at-date=05/11/2024
+template.due-date=05/12/2024
 template.hourly-rate=15
+template.vat-rate=17
 template.recipient-name=Amazon EU
 template.recipient-address-street=38 Av. John F. Kennedy,
 template.recipient-address-postal-city=L-1855 Neudorf-Weimershof

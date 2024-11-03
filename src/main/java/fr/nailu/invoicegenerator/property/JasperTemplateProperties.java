@@ -10,6 +10,7 @@ public class JasperTemplateProperties {
     private String createdAtDate;
     private String dueDate;
     private double hourlyRate;
+    private double vatRate;
     private String recipientName;
     private String recipientAddressStreet;
     private String recipientAddressPostalCity;
@@ -56,6 +57,14 @@ public class JasperTemplateProperties {
 
     public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
+    }
+
+    public double getVatRate() {
+        return vatRate;
+    }
+
+    public void setVatRate(double vatRate) {
+        this.vatRate = vatRate;
     }
 
     public String getRecipientName() {

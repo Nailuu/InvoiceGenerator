@@ -7,11 +7,14 @@ import fr.nailu.invoicegenerator.util.Timestamp;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -28,35 +31,40 @@ public class ParsingService {
         this._taskService = taskService;
     }
 
-    private List<Task> parseTasksFromCSV(CSVParser csvParser) {
+    private List<Task> parseTasksFromCSV(CSVParser csvParser) throws ParseException {
         List<Task> tasks = new ArrayList<>();
-        HashMap<String, Integer> map = new HashMap();
+        HashMap<String, Object[]> map = new HashMap();
 
         for (CSVRecord record : csvParser) {
             String name = record.get("NOTES");
-            String value = record.get("HOURS");
+            String time = record.get("HOURS");
+            String dateString = record.get("DATE");
 
-            if (name.isEmpty() || value.isEmpty()) {
+            if (name.isEmpty() || time.isEmpty() || dateString.isEmpty()) {
                 continue;
             }
 
             int minutes;
 
             try {
-                minutes = Timestamp.getMinutesFromTimestamp(value);
+                minutes = Timestamp.getMinutesFromTimestamp(time);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 continue;
             }
 
-            map.compute(name, (k, v) -> v == null ? minutes : v + minutes);
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date date = dateFormat.parse(dateString);
+
+            map.compute(name, (k, v) -> v == null ? new Object[]{minutes, date} : new Object[]{((Integer)v[0] + minutes), date});
         }
 
         map.forEach((k, v) -> {
             Task task = new Task();
 
             task.setName(k);
-            task.setMinutes(v);
+            task.setMinutes((Integer) v[0]);
+            task.setDate((Date) v[1]);
 
             tasks.add(task);
         });
@@ -64,7 +72,7 @@ public class ParsingService {
         return tasks;
     }
 
-    public void process() throws Exception {
+    public void process() throws IOException, ParseException {
         String path = ResourceUtils.getFile(this._properties.getCSVPath()).getAbsolutePath();
 
         System.out.println("Parsing CSV file: " + path);

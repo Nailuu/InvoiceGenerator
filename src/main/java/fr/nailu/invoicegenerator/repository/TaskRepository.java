@@ -21,16 +21,16 @@ public class TaskRepository {
             Task task = new Task();
             task.setName(rs.getString("name"));
             task.setMinutes(rs.getInt("minutes"));
-
+            task.setDate(rs.getDate("date"));
 
             return task;
         };
     }
 
     public void save(Task task) {
-        String sql = "INSERT INTO task (name, minutes) values (?, ?)";
+        String sql = "INSERT INTO task (name, minutes, date) values (?, ?, ?)";
 
-        this._jdbc.update(sql, task.getName(), task.getMinutes());
+        this._jdbc.update(sql, task.getName(), task.getMinutes(), task.getDate());
     }
 
     public void saveAll(List<Task> tasks) {
@@ -40,7 +40,7 @@ public class TaskRepository {
     }
 
     public List<Task> findAll() {
-        String sql = "SELECT * FROM task";
+        String sql = "SELECT * FROM task ORDER BY date ASC";
 
         return this._jdbc.query(sql, this._mapper);
     }
